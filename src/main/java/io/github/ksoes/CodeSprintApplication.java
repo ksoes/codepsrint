@@ -1,8 +1,11 @@
 package io.github.ksoes;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
 public class CodeSprintApplication {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
-        System.out.println("dev_stage 브랜치 생성");
+        SpringApplication.run(CodeSprintApplication.class, args);
     }
 }
