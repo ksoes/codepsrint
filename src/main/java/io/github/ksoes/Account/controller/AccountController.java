@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Map;
+
 @Slf4j
 @RestController
 @RequiredArgsConstructor
@@ -20,6 +22,9 @@ public class AccountController {
     @PostMapping("/signup")
     public ResponseEntity<?> signup(@RequestBody AccountForm form) {
         accountService.saveAccount(form);
-        return ResponseEntity.ok("회원가입 완료");
+        return ResponseEntity.ok(Map.of(
+                "status", "success",
+                "message", "회원가입 완료"
+        ));
     }
 }
