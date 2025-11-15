@@ -2,15 +2,11 @@ package io.github.ksoes.Account.controller;
 
 import io.github.ksoes.Account.dto.AccountForm;
 import io.github.ksoes.Account.service.AccountService;
+import io.github.ksoes.common.dto.ApiResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.Map;
+import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @RestController
@@ -21,10 +17,15 @@ public class AccountController {
 
     @PostMapping("/signup")
     public ResponseEntity<?> signup(@RequestBody AccountForm form) {
-        accountService.saveAccount(form);
-        return ResponseEntity.ok(Map.of(
-                "status", "success",
-                "message", "회원가입 완료"
-        ));
+        log.info("========== 회원가입 ==========");
+        accountService.signin(form);
+        return ResponseEntity.ok(ApiResponse.success("회원가입 완료", null));
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody AccountForm form) {
+        log.info("========== 로그인 ==========");
+        accountService.login(form);
+        return ResponseEntity.ok(ApiResponse.success("로그인 성공", null));
     }
 }
