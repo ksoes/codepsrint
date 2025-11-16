@@ -1,5 +1,8 @@
 package io.github.ksoes.common.domain;
 
+import lombok.Getter;
+
+@Getter
 public enum Role {
     ADMIN("10"),
     USER("20");
@@ -10,7 +13,4 @@ public enum Role {
         this.code = code;
     }
 
-    public String getCode() {
-        return code;
-    }
 }
