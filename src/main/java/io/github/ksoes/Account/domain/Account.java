@@ -1,5 +1,6 @@
 package io.github.ksoes.Account.domain;
 
+import io.github.ksoes.User.Domain.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,4 +21,8 @@ public class Account {
 
     private String id;
     private String password;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
+    private User user;
 }

@@ -18,8 +18,15 @@ public class AccountController {
     @PostMapping("/signup")
     public ResponseEntity<?> signup(@RequestBody AccountForm form) {
         log.info("========== 회원가입 ==========");
-        accountService.signin(form);
+        accountService.signup(form);
         return ResponseEntity.ok(ApiResponse.success("회원가입 완료", null));
+    }
+
+    @PostMapping("/signup/admin")
+    public ResponseEntity<?> signupAdmin(@RequestBody AccountForm form) {
+        log.info("========== 관리자 회원가입 ==========");
+        accountService.signupAdmin(form);
+        return ResponseEntity.ok(ApiResponse.success("관리자 회원가입 완료", null));
     }
 
     @PostMapping("/login")
