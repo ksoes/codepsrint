@@ -18,7 +18,7 @@ public class CategoryController {
     private final CategoryService categoryService;
 
     @GetMapping("/category/list")
-    public ResponseEntity<?> searchCategoryList(@RequestBody CategoryCond cond) {
+    public ResponseEntity<?> searchCategoryList(CategoryCond cond) {
         log.info("========== 카테고리 목록조회 ==========");
         return ResponseEntity.ok(ApiResponse.success("조회 완료", categoryService.searchCategoryList(cond)));
     }

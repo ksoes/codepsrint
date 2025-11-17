@@ -17,7 +17,7 @@ public class RoomController {
     private final RoomService roomService;
 
     @GetMapping("/rooms")
-    public ResponseEntity<?> searchRooms(@RequestBody RoomCond cond) {
+    public ResponseEntity<?> searchRooms(RoomCond cond) {
         log.info("========== 방 목록조회 ==========");
         return ResponseEntity.ok(ApiResponse.success("조회 완료", roomService.searchRooms(cond)));
     }
