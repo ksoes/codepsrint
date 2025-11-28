@@ -50,6 +50,8 @@ dependencies {
     // jakarta — 컴파일 classpath에 확실히 넣기
     annotationProcessor 'jakarta.persistence:jakarta.persistence-api:3.1.0'
     annotationProcessor 'jakarta.annotation:jakarta.annotation-api:2.1.1'
+    // Gemini open api
+    implementation("com.google.genai:google-genai:1.8.0")
 }
 
 test {

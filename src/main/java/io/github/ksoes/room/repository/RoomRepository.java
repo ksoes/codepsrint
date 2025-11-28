@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface RoomRepository extends JpaRepository<Room, Long> {
     List<Room> findAllByCategoryIdAndStatusCd(Long categoryId, String statusCd);
-    Room existsByCategoryId(Long categoryId);
+    Boolean existsByCategoryIdAndStatusCd(Long categoryId, String statusCd);
 }

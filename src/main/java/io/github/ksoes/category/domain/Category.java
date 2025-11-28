@@ -1,5 +1,6 @@
 package io.github.ksoes.category.domain;
 
+import io.github.ksoes.quiz.domain.Quiz;
 import io.github.ksoes.room.domain.Room;
 import io.github.ksoes.common.domain.YesOrNo;
 import jakarta.persistence.*;
@@ -24,6 +25,9 @@ public class Category {
     // 카테고리 하나에 상태가 다른 Room이 여러개 존재 가능하므로 Category(1):Room(N)
     @OneToMany(mappedBy = "category")
     private List<Room> rooms;
+
+    @OneToMany(mappedBy = "category")
+    private List<Quiz> quizzes;
 
     private String categoryName;
 
