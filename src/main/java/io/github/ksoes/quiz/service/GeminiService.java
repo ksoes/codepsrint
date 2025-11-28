@@ -17,7 +17,6 @@ public class GeminiService {
         String prompt = """
             당신은 학습용 Q&A 생성기입니다.
             키워드 "%s"를 주제로 2개의 단답형으로 정답을 맞출 수 있는 Q&A를 JSON으로 출력하세요. 정답이 여러가지 일 경우 |를 사용해서 붙이세요.
-            정답이 여러가지 일 경우 |로 붙이세요.
             [
               { "question": "", "answer": "" }
             ]
